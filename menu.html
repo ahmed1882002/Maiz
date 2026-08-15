@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu | MAÏZ - Hawawshi, Charcoal Hearth & Artisanal Elixirs</title>
+  <meta name="description" content="Explore the full menu of Maïz: Heritage Baladi Hawawshi, live charcoal grilled meats, silky mezze, and botanical elixirs.">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/design-tokens.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/menu.css">
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand-logo" aria-label="Maiz Home">
+        <span>MAÏZ</span>
+        <span class="logo-arabic">مَيْز</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="story.html" class="nav-link">Story & The Craft</a></li>
+          <li><a href="menu.html" class="nav-link active">Menu</a></li>
+          <li><a href="reserve.html" class="nav-link">Reservations</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="cart-toggle-btn" id="openBagBtn" aria-label="View Pick-up Bag">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 01-8 0"/>
+          </svg>
+          <span class="cart-count-badge" style="display:none;">0</span>
+        </button>
+
+        <a href="reserve.html" class="btn btn-primary btn-sm">Reserve Table</a>
+
+        <button class="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 8h16M4 16h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Hero Header -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow"><span class="eyebrow-line"></span> The Culinary Collection</span>
+        <h1 class="page-hero-title">The Atelier Menu</h1>
+        <p class="page-hero-subtitle">
+          Every plate is seasoned with heritage whole spices, cooked over natural wood embers, and served in its purest, most flavorful expression.
+        </p>
+      </div>
+    </section>
+
+    <!-- Sticky Category & Dietary Filter Controls -->
+    <div class="menu-controls-wrapper">
+      <div class="container">
+        <div class="menu-controls-inner">
+          <!-- Category Tabs -->
+          <ul class="category-nav-list" role="tablist">
+            <li><button class="category-btn active" data-category="all">All Offerings</button></li>
+            <li><button class="category-btn" data-category="hawawshi">Hawawshi Atelier</button></li>
+            <li><button class="category-btn" data-category="hearth">Charcoal Hearth</button></li>
+            <li><button class="category-btn" data-category="mezze">Mezze & Dips</button></li>
+            <li><button class="category-btn" data-category="elixirs">Artisanal Elixirs</button></li>
+            <li><button class="category-btn" data-category="sweets">Sweet Endings</button></li>
+          </ul>
+
+          <!-- Dietary & Search Row -->
+          <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+            <div class="dietary-filters">
+              <button class="filter-pill active" data-diet="all">All</button>
+              <button class="filter-pill" data-diet="chef">★ Chef Selection</button>
+              <button class="filter-pill" data-diet="spicy">🔥 Fire Spiced</button>
+              <button class="filter-pill" data-diet="veg">🌿 Vegetarian</button>
+            </div>
+
+            <div style="position:relative;">
+              <input type="text" id="menuSearchInput" class="form-input" placeholder="Search dish or ingredient..." style="padding:0.45rem 1rem; font-size:0.85rem; width:220px;" aria-label="Search Menu">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dynamic Menu Container -->
+    <section class="menu-section-container">
+      <div class="container" id="menuContainer">
+        <!-- Rendered by js/menu.js -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Universal Order Drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="side-drawer" id="bagDrawer" aria-label="Pick-up Order Drawer">
+    <div class="drawer-header">
+      <h3 class="drawer-title">Your Pick-up Bag</h3>
+      <button class="drawer-close" id="closeBagDrawer" aria-label="Close Bag Drawer">&times;</button>
+    </div>
+    <div class="drawer-body" id="bagItemsList">
+      <!-- Items dynamically rendered -->
+    </div>
+    <div class="drawer-footer">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+        <span style="font-size:0.9rem; color:var(--color-text-secondary);">Subtotal:</span>
+        <span id="bagSubtotal" style="font-family:var(--font-serif-display); font-size:1.35rem; color:var(--color-gold-accent);">$0.00</span>
+      </div>
+      <button class="btn btn-primary" id="bagCheckoutBtn" style="width:100%;">Prepare for Pick-up</button>
+    </div>
+  </aside>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <span>MAÏZ</span>
+            <span class="logo-arabic">مَيْز</span>
+          </a>
+          <p>An upscale culinary atelier dedicated to the craft of authentic Hawawshi, live wood-charcoal grills, and artisanal elixirs.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="story.html">Story & The Craft</a></li>
+            <li><a href="menu.html">Full Menu</a></li>
+            <li><a href="reserve.html">Table Reservations</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Flagship Atelier</h4>
+          <ul class="footer-links">
+            <li style="color:var(--color-text-secondary); font-size:0.875rem;">14 Al-Muizz Avenue, Downtown</li>
+            <li style="color:var(--color-text-secondary); font-size:0.875rem;">Open Daily: 12:00 PM – 01:00 AM</li>
+            <li style="color:var(--color-text-secondary); font-size:0.875rem;">+20 2 2795 8820</li>
+            <li><a href="mailto:atelier@maiz-hearth.com">atelier@maiz-hearth.com</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">The Hearth Circle</h4>
+          <p style="font-size:0.85rem; color:var(--color-text-secondary); margin-bottom:0.75rem;">Join for private supper club invitations and seasonal tasting releases.</p>
+          <form class="newsletter-form">
+            <input type="email" class="form-input" placeholder="Your email address" required aria-label="Email Address">
+            <button type="submit" class="btn btn-primary btn-sm">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 MAÏZ Culinary Atelier. All rights reserved.</span>
+        <span>Crafted with Flame & Stone-Milled Flour.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data/menu-items.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservations & Flagships | MAÏZ</title>
+  <meta name="description" content="Reserve a table at Maïz. Experience the live charcoal hearth counter or relaxed dining atelier in Downtown, Marina, or Garden Quarter.">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/design-tokens.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/reserve.css">
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand-logo" aria-label="Maiz Home">
+        <span>MAÏZ</span>
+        <span class="logo-arabic">مَيْز</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="story.html" class="nav-link">Story & The Craft</a></li>
+          <li><a href="menu.html" class="nav-link">Menu</a></li>
+          <li><a href="reserve.html" class="nav-link active">Reservations</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="cart-toggle-btn" id="openBagBtn" aria-label="View Pick-up Bag">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 01-8 0"/>
+          </svg>
+          <span class="cart-count-badge" style="display:none;">0</span>
+        </button>
+
+        <a href="reserve.html" class="btn btn-primary btn-sm">Reserve Table</a>
+
+        <button class="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 8h16M4 16h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Hero Header -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow"><span class="eyebrow-line"></span> Table Bookings & Private Experiences</span>
+        <h1 class="page-hero-title">Reserve Your Hearth Experience</h1>
+        <p class="page-hero-subtitle">
+          Join us at the open charcoal counter or in our intimate dining salon. Reservations are available up to 30 days in advance.
+        </p>
+      </div>
+    </section>
+
+    <!-- Booking Form & Info Section -->
+    <section class="container">
+      <div class="booking-layout-grid">
+        <!-- Interactive Booking Engine Card -->
+        <div class="booking-card">
+          <form id="reservationForm">
+            <!-- Step 1: Guests -->
+            <div class="booking-step">
+              <div class="booking-step-header">
+                <span class="step-num-badge">1</span>
+                <h3 class="step-title">Select Party Size</h3>
+              </div>
+              <div class="guest-picker-grid">
+                <button type="button" class="guest-btn" data-guests="1">1</button>
+                <button type="button" class="guest-btn active" data-guests="2">2</button>
+                <button type="button" class="guest-btn" data-guests="3">3</button>
+                <button type="button" class="guest-btn" data-guests="4">4</button>
+                <button type="button" class="guest-btn" data-guests="5">5</button>
+                <button type="button" class="guest-btn" data-guests="6">6+</button>
+              </div>
+            </div>
+
+            <!-- Step 2: Date & Time -->
+            <div class="booking-step">
+              <div class="booking-step-header">
+                <span class="step-num-badge">2</span>
+                <h3 class="step-title">Select Date & Time</h3>
+              </div>
+              <div style="margin-bottom: var(--space-md);">
+                <input type="date" id="bookDate" class="form-input" value="2026-08-16" required aria-label="Reservation Date">
+              </div>
+              <div class="timeslot-grid">
+                <button type="button" class="time-slot-btn" data-time="13:00">1:00 PM</button>
+                <button type="button" class="time-slot-btn" data-time="14:30">2:30 PM</button>
+                <button type="button" class="time-slot-btn" data-time="18:00">6:00 PM</button>
+                <button type="button" class="time-slot-btn active" data-time="19:00">7:00 PM</button>
+                <button type="button" class="time-slot-btn" data-time="20:00">8:00 PM</button>
+                <button type="button" class="time-slot-btn" data-time="21:15">9:15 PM</button>
+                <button type="button" class="time-slot-btn" data-time="22:30">10:30 PM</button>
+                <button type="button" class="time-slot-btn" data-time="23:30">11:30 PM</button>
+              </div>
+            </div>
+
+            <!-- Step 3: Seating Preference -->
+            <div class="booking-step">
+              <div class="booking-step-header">
+                <span class="step-num-badge">3</span>
+                <h3 class="step-title">Select Atmosphere & Seating</h3>
+              </div>
+              <div class="seating-options-grid">
+                <div class="seating-card-option active" data-seating="hearth">
+                  <h6>The Hearth Counter</h6>
+                  <p>Front-row view of live fire and pitmasters</p>
+                </div>
+                <div class="seating-card-option" data-seating="dining">
+                  <h6>Dining Salon</h6>
+                  <p>Intimate travertine tables with relaxed ambiance</p>
+                </div>
+                <div class="seating-card-option" data-seating="terrace">
+                  <h6>Garden Terrace</h6>
+                  <p>Open-air evening seating under warm lanterns</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 4: Contact & Details -->
+            <div class="booking-step">
+              <div class="booking-step-header">
+                <span class="step-num-badge">4</span>
+                <h3 class="step-title">Guest Information</h3>
+              </div>
+              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:var(--space-md); margin-bottom:var(--space-md);">
+                <input type="text" id="bookName" class="form-input" placeholder="Full Name" required aria-label="Full Name">
+                <input type="tel" id="bookPhone" class="form-input" placeholder="Phone Number" required aria-label="Phone Number">
+              </div>
+              <div style="margin-bottom:var(--space-md);">
+                <select id="bookLocation" class="form-input" aria-label="Select Location">
+                  <option value="downtown">Flagship Atelier — Downtown (14 Al-Muizz Ave)</option>
+                  <option value="marina">Waterfront Terrace — Marina Pier</option>
+                  <option value="garden">The Garden Quarter — Sheikh Zayed</option>
+                </select>
+              </div>
+              <div>
+                <textarea id="bookNotes" class="form-input" rows="2" placeholder="Dietary preferences, anniversary, or special notes..."></textarea>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">Confirm Reservation</button>
+          </form>
+        </div>
+
+        <!-- Experience & Booking Notes Side Column -->
+        <div>
+          <div style="border-radius:var(--radius-lg); overflow:hidden; border:1px solid rgba(255,255,255,0.1); margin-bottom:var(--space-xl); box-shadow:var(--shadow-md);">
+            <img src="assets/images/dining_space.jpg" alt="Maiz Dining Space with open hearth and warm travertine" style="width:100%; height:auto; display:block;">
+          </div>
+
+          <div style="background:var(--color-bg-surface); border:1px solid var(--color-bg-card-border); padding:var(--space-xl); border-radius:var(--radius-md);">
+            <h4 style="font-family:var(--font-sans); font-size:var(--font-size-base); font-weight:700; margin-bottom:var(--space-sm); color:var(--color-gold-accent);">
+              The Hearth Experience Protocol
+            </h4>
+            <ul style="padding-left:1.2rem; margin:0; font-size:0.875rem; color:var(--color-text-secondary); line-height:1.6;">
+              <li style="margin-bottom:0.5rem;">We hold reservations for 15 minutes past scheduled seating time.</li>
+              <li style="margin-bottom:0.5rem;">Hearth counter seating accommodates parties of up to 4 guests for optimal chef interaction.</li>
+              <li style="margin-bottom:0.5rem;">For private supper clubs or buyouts of 12+ guests, contact our concierge directly at <a href="mailto:events@maiz-hearth.com" style="color:var(--color-ember-primary);">events@maiz-hearth.com</a>.</li>
+              <li>Valet parking is complimentary at all three flagships.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Flagship Locations Grid -->
+    <section class="locations-showcase-section" style="background:#0e0e11; border-top:1px solid rgba(255,255,255,0.06);">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="eyebrow"><span class="eyebrow-line"></span> Spaces & Flagships</span>
+          <h2>Our Three Destinations</h2>
+          <p class="lead">Each location features custom firebrick hearths, raw stone architecture, and curated acoustic playlists.</p>
+        </div>
+
+        <div class="locations-grid">
+          <!-- Location 1 -->
+          <div class="location-card">
+            <div>
+              <span class="location-tag">Flagship Atelier</span>
+              <h3 class="location-card-title">Downtown Cairo</h3>
+              <ul class="location-meta-list">
+                <li>📍 14 Al-Muizz Historic Avenue</li>
+                <li>⏰ Daily: 12:00 PM – 01:00 AM</li>
+                <li>📞 +20 2 2795 8820</li>
+                <li>🔥 18-Seat Live Hearth Counter</li>
+              </ul>
+            </div>
+            <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid rgba(255,255,255,0.05);">
+              <a href="#reservationForm" class="btn btn-outline btn-sm" style="width:100%;">Book Downtown</a>
+            </div>
+          </div>
+
+          <!-- Location 2 -->
+          <div class="location-card">
+            <div>
+              <span class="location-tag">Waterfront Lounge</span>
+              <h3 class="location-card-title">Marina Promenade</h3>
+              <ul class="location-meta-list">
+                <li>📍 Pier 7, Marina Waterfront</li>
+                <li>⏰ Tue – Sun: 01:00 PM – 02:00 AM</li>
+                <li>📞 +20 2 3341 9904</li>
+                <li>🌊 Seaside Open Ember Terrace</li>
+              </ul>
+            </div>
+            <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid rgba(255,255,255,0.05);">
+              <a href="#reservationForm" class="btn btn-outline btn-sm" style="width:100%;">Book Marina</a>
+            </div>
+          </div>
+
+          <!-- Location 3 -->
+          <div class="location-card">
+            <div>
+              <span class="location-tag">Botanical Courtyard</span>
+              <h3 class="location-card-title">The Garden Quarter</h3>
+              <ul class="location-meta-list">
+                <li>📍 Boulevard 9, Sheikh Zayed</li>
+                <li>⏰ Daily: 12:00 PM – 12:30 AM</li>
+                <li>📞 +20 2 3850 1177</li>
+                <li>🌿 Citrus Grove & Charcoal Bar</li>
+              </ul>
+            </div>
+            <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid rgba(255,255,255,0.05);">
+              <a href="#reservationForm" class="btn btn-outline btn-sm" style="width:100%;">Book Garden Quarter</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Reservation Confirmation Voucher Modal -->
+  <div class="drawer-backdrop"></div>
+  <div class="side-drawer" id="bookingConfirmationModal" style="max-width:480px;">
+    <div class="drawer-header">
+      <h3 class="drawer-title" style="color:var(--color-gold-accent);">Reservation Confirmed</h3>
+      <button class="drawer-close" id="closeConfModal">&times;</button>
+    </div>
+    <div class="drawer-body" style="text-align:center; padding:2rem 1.5rem;">
+      <div style="width:54px; height:54px; border-radius:50%; background:rgba(200,109,71,0.15); color:var(--color-ember-primary); display:flex; align-items:center; justify-content:center; margin:0 auto 1.5rem auto;">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      </div>
+
+      <h4 id="confName" style="font-family:var(--font-serif-display); font-size:1.6rem; margin-bottom:0.25rem;"></h4>
+      <p style="color:var(--color-text-tertiary); font-size:0.85rem; margin-bottom:1.5rem;">Your hearth table has been reserved.</p>
+
+      <div style="background:var(--color-bg-surface-elevated); border:1px solid var(--color-bg-card-border); border-radius:var(--radius-md); padding:1.25rem; text-align:left; margin-bottom:1.5rem;">
+        <div style="display:flex; justify-content:space-between; margin-bottom:0.75rem; border-bottom:1px solid rgba(255,255,255,0.06); padding-bottom:0.5rem;">
+          <span style="font-size:0.8rem; color:var(--color-text-tertiary);">Confirmation Code:</span>
+          <span id="confRefCode" style="font-weight:700; color:var(--color-gold-accent); font-family:monospace; font-size:1rem;"></span>
+        </div>
+        <div style="margin-bottom:0.5rem;">
+          <span style="font-size:0.8rem; color:var(--color-text-tertiary); display:block;">Experience Details:</span>
+          <strong id="confDetails" style="font-size:0.9rem; color:var(--color-text-primary);"></strong>
+        </div>
+        <div>
+          <span style="font-size:0.8rem; color:var(--color-text-tertiary); display:block;">Location:</span>
+          <strong id="confLocation" style="font-size:0.9rem; color:var(--color-text-primary);"></strong>
+        </div>
+      </div>
+
+      <p style="font-size:0.8rem; color:var(--color-text-tertiary);">
+        A confirmation SMS has been dispatched with valet and arrival directions. We look forward to hosting you.
+      </p>
+
+      <button class="btn btn-primary" onclick="location.reload()" style="width:100%; margin-top:1rem;">Done</button>
+    </div>
+  </div>
+
+  <!-- Universal Order Drawer -->
+  <aside class="side-drawer" id="bagDrawer" aria-label="Pick-up Order Drawer">
+    <div class="drawer-header">
+      <h3 class="drawer-title">Your Pick-up Bag</h3>
+      <button class="drawer-close" id="closeBagDrawer" aria-label="Close Bag Drawer">&times;</button>
+    </div>
+    <div class="drawer-body" id="bagItemsList"></div>
+    <div class="drawer-footer">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+        <span style="font-size:0.9rem; color:var(--color-text-secondary);">Subtotal:</span>
+        <span id="bagSubtotal" style="font-family:var(--font-serif-display); font-size:1.35rem; color:var(--color-gold-accent);">$0.00</span>
+      </div>
+      <button class="btn btn-primary" id="bagCheckoutBtn" style="width:100%;">Prepare for Pick-up</button>
+    </div>
+  </aside>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <span>MAÏZ</span>
+            <span class="logo-arabic">مَيْز</span>
+          </a>
+          <p>An upscale culinary atelier dedicated to the craft of authentic Hawawshi, live wood-charcoal grills, and artisanal elixirs.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="story.html">Story & The Craft</a></li>
+            <li><a href="menu.html">Full Menu</a></li>
+            <li><a href="reserve.html">Table Reservations</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Flagship Atelier</h4>
+          <ul class="footer-links">
+            <li style="color:var(--color-text-secondary); font-size:0.875rem;">14 Al-Muizz Avenue, Downtown</li>
+            <li style="color:var(--color-text-secondary); font-size:0.875rem;">Open Daily: 12:00 PM – 01:00 AM</li>
+            <li style="color:var(--color-text-secondary); font-size:0.875rem;">+20 2 2795 8820</li>
+            <li><a href="mailto:atelier@maiz-hearth.com">atelier@maiz-hearth.com</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">The Hearth Circle</h4>
+          <p style="font-size:0.85rem; color:var(--color-text-secondary); margin-bottom:0.75rem;">Join for private supper club invitations and seasonal tasting releases.</p>
+          <form class="newsletter-form">
+            <input type="email" class="form-input" placeholder="Your email address" required aria-label="Email Address">
+            <button type="submit" class="btn btn-primary btn-sm">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 MAÏZ Culinary Atelier. All rights reserved.</span>
+        <span>Crafted with Flame & Stone-Milled Flour.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data/menu-items.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/reserve.js"></script>
+</body>
+</html>

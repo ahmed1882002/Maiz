@@ -1,0 +1,231 @@
+/* ==========================================================================
+   MAÏZ - RESERVATIONS & LOCATIONS STYLES
+   Table Booking, Supper Club & Atelier Flagships
+   ========================================================================== */
+
+.booking-layout-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: var(--space-4xl);
+  align-items: start;
+  padding: var(--space-3xl) 0;
+}
+
+.booking-card {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-bg-card-border);
+  padding: var(--space-2xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.booking-step {
+  margin-bottom: var(--space-2xl);
+}
+
+.booking-step:last-child {
+  margin-bottom: 0;
+}
+
+.booking-step-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.step-num-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(200, 109, 71, 0.15);
+  color: var(--color-ember-glow);
+  font-weight: 700;
+  font-size: var(--font-size-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(200, 109, 71, 0.3);
+}
+
+.step-title {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+/* Guest Selector Grid */
+.guest-picker-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--space-xs);
+}
+
+.guest-btn {
+  background: var(--color-bg-surface-elevated);
+  border: 1px solid var(--color-bg-card-border);
+  color: var(--color-text-primary);
+  padding: 0.75rem 0;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.guest-btn:hover {
+  border-color: var(--color-ember-primary);
+  background: rgba(200, 109, 71, 0.1);
+}
+
+.guest-btn.active {
+  background: var(--color-ember-primary);
+  color: #fff;
+  border-color: var(--color-ember-primary);
+}
+
+/* Time Slot Selection */
+.timeslot-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-xs);
+}
+
+.time-slot-btn {
+  background: var(--color-bg-surface-elevated);
+  border: 1px solid var(--color-bg-card-border);
+  color: var(--color-text-secondary);
+  padding: 0.65rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  transition: all var(--transition-fast);
+}
+
+.time-slot-btn:hover {
+  color: var(--color-text-primary);
+  border-color: var(--color-gold-accent);
+}
+
+.time-slot-btn.active {
+  background: var(--color-gold-accent);
+  color: #0b0b0d;
+  font-weight: 700;
+  border-color: var(--color-gold-accent);
+}
+
+/* Seating Area Preference */
+.seating-options-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+}
+
+.seating-card-option {
+  background: var(--color-bg-surface-elevated);
+  border: 1px solid var(--color-bg-card-border);
+  padding: var(--space-md);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: center;
+}
+
+.seating-card-option:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.seating-card-option.active {
+  border-color: var(--color-ember-primary);
+  background: rgba(200, 109, 71, 0.08);
+}
+
+.seating-card-option h6 {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  margin: 0 0 2px 0;
+  color: var(--color-text-primary);
+}
+
+.seating-card-option p {
+  font-size: 0.7rem;
+  color: var(--color-text-tertiary);
+  margin: 0;
+}
+
+/* Locations Showcase */
+.locations-showcase-section {
+  padding: var(--space-4xl) 0;
+}
+
+.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+  margin-top: var(--space-2xl);
+}
+
+.location-card {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-bg-card-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-2xl) var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all var(--transition-smooth);
+}
+
+.location-card:hover {
+  border-color: var(--color-ember-primary);
+  transform: translateY(-4px);
+}
+
+.location-card-title {
+  font-family: var(--font-serif-display);
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-xs);
+}
+
+.location-tag {
+  font-size: var(--font-size-xs);
+  color: var(--color-ember-glow);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-md);
+  display: block;
+}
+
+.location-meta-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-md) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.location-meta-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-xs);
+}
+
+@media (max-width: 1024px) {
+  .booking-layout-grid {
+    grid-template-columns: 1fr;
+  }
+  .locations-grid {
+    grid-template-columns: 1fr;
+  }
+  .seating-options-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,154 @@
+/* ==========================================================================
+   MAÏZ - OUR STORY & THE CRAFT STYLES
+   Editorial Heritage, Spice Alchemy & Charcoal Hearth
+   ========================================================================== */
+
+.story-manifesto-section {
+  padding: var(--space-4xl) 0;
+  position: relative;
+}
+
+.manifesto-quote {
+  font-family: var(--font-serif-display);
+  font-size: clamp(1.8rem, 3.2vw, 2.75rem);
+  line-height: 1.35;
+  color: var(--color-text-primary);
+  text-align: center;
+  max-width: 960px;
+  margin: 0 auto var(--space-2xl) auto;
+  font-style: italic;
+}
+
+.manifesto-author {
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-gold-accent);
+}
+
+.story-grid-narrative {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4xl);
+  align-items: center;
+  margin: var(--space-4xl) 0;
+}
+
+.story-image-wrap {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-lg);
+}
+
+.story-image-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.story-caption-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(0deg, rgba(12, 12, 14, 0.9) 0%, transparent 100%);
+  padding: var(--space-xl) var(--space-lg) var(--space-md);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.05em;
+}
+
+/* Spice & Ingredient Showcase */
+.spices-section {
+  background: var(--color-bg-surface);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: var(--space-4xl) 0;
+}
+
+.spices-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  margin-top: var(--space-2xl);
+}
+
+.spice-card {
+  background: var(--color-bg-surface-elevated);
+  border: 1px solid var(--color-bg-card-border);
+  padding: var(--space-xl) var(--space-lg);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-smooth);
+}
+
+.spice-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-gold-accent);
+}
+
+.spice-card .spice-origin {
+  font-size: var(--font-size-xs);
+  color: var(--color-gold-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+}
+
+.spice-card .spice-title {
+  font-family: var(--font-serif-display);
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-xs);
+}
+
+.spice-card .spice-desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Hearth Craft Anatomy */
+.hearth-anatomy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+  margin-top: var(--space-2xl);
+}
+
+.hearth-item {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-bg-card-border);
+  padding: var(--space-2xl) var(--space-lg);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.hearth-item-icon {
+  font-size: 2.2rem;
+  color: var(--color-ember-primary);
+  margin-bottom: var(--space-md);
+}
+
+@media (max-width: 1024px) {
+  .story-grid-narrative {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+  .spices-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hearth-anatomy-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .spices-grid {
+    grid-template-columns: 1fr;
+  }
+}
